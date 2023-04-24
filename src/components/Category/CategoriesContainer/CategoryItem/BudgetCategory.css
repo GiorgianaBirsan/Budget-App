@@ -1,0 +1,44 @@
+.category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* .box_img_cat{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    border-width: 2px;
+    border-style: solid;
+   
+} */
+
+.category_details {
+  display: flex;
+  flex-direction: column;
+}
+.category_title {
+  margin: 0;
+  color: #5c5c5c;
+  font-weight: bold;
+}
+.category_amount {
+  color: #888888;
+  font-size: smaller;
+  font-weight: 600;
+  margin: 0;
+}
+
+.submit_btn {
+  background-color: rgb(41, 116, 228);
+  margin-left: 45%;
+  color: rgb(233, 233, 233);
+  border-radius: 5px;
+  border: solid 1px rgb(231, 231, 231);
+  text-align: center;
+  align-items: center;
+  padding: 10px 20px;
+}

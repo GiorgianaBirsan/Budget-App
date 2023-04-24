@@ -1,0 +1,13 @@
+.wallet_container_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 50px;
+}
+
+h1 {
+  font-size: larger;
+  color: #413e3e;
+}

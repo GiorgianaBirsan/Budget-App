@@ -1,0 +1,35 @@
+* {
+  font-size: 17px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.form,
+.categories,
+.title,
+.date,
+.amount,
+.amount-type,
+.wallet {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.categories {
+  gap: 10px;
+}
+label {
+  font-size: medium;
+}
+input,
+select {
+  height: 30px;
+  border-radius: 5px;
+  border: solid 1px rgb(212, 211, 211);
+}
+#save_transaction {
+  width: 30%;
+  margin: auto;
+}
+select {
+  max-height: 200px;
+  overflow-y: scroll;
+}

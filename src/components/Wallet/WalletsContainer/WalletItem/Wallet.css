@@ -1,0 +1,36 @@
+.wallet {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.box_img {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+}
+
+.wallet_details {
+  display: flex;
+  flex-direction: column;
+}
+.wallet_title {
+  margin: 0;
+  color: #5c5c5c;
+  font-weight: bold;
+}
+.wallet_amount {
+  color: #888888;
+  font-size: smaller;
+  font-weight: 600;
+  margin: 0;
+}
+.react-icons {
+  vertical-align: middle;
+  color: aliceblue;
+  margin: auto;
+  font-size: 20px;
+}

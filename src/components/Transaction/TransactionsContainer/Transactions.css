@@ -1,0 +1,11 @@
+.expenses_history {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+#item_card {
+  display: flex;
+  flex-direction: row;
+}

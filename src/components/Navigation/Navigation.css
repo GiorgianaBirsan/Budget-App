@@ -1,0 +1,27 @@
+* {
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navigation_side {
+  background-color: rgb(255, 255, 255);
+  width: 20vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+}
+.logo_text {
+  padding-top: 30px;
+  font-size: 40px;
+  font-style: italic;
+  display: flex;
+  margin-bottom: 50px;
+  color: rgb(52, 121, 250);
+}
+
+hr {
+  width: 100%;
+  border: 1px solid #eff0f375;
+  border-radius: 100%;
+  margin: 40px 0px;
+}

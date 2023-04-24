@@ -1,0 +1,22 @@
+* {
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.form,
+.name,
+.amount,
+.amount-type {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 30px;
+  border-radius: 5px;
+  border: solid 1px rgb(212, 211, 211);
+}
+#save_transaction {
+  width: 30%;
+  margin: auto;
+}

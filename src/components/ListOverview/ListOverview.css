@@ -1,0 +1,35 @@
+.overview_wallet {
+  font-size: xx-large;
+  margin-bottom: 30px;
+}
+.overview_details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.total_flow {
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flow {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.flow_title,
+.flow_amount {
+  margin: 0px;
+}
+.flow_amount {
+  font-weight: bold;
+}
+.flow_title {
+  color: rgb(90, 88, 88);
+  font-size: 16px;
+}
