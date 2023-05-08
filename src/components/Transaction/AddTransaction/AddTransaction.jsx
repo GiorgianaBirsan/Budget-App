@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './AddTransaction.css';
 
 const amountType = [
@@ -20,13 +20,14 @@ const initial_values = {
 export default function AddTransaction(props) {
   const [transaction, setTransaction] = useState(initial_values);
 
+  //POPULATE THE DROPDOWN LIST WITH EXISTING LOCALHOST LISTS OF ELEMENTS
   const wallets = JSON.parse(localStorage.getItem('listWallets'));
   const categories = JSON.parse(localStorage.getItem('listCategories'));
 
   const inputHandler = event => {
     const { name, value } = event.target;
 
-    //SELECT THE RIGHT COLOR FROM EACH DEFINED/SELECTED CATEGORY, TO SET THE COLOR OF LEFT DIV-MARK OF TRANSACTION ITEMS
+    //SELECT THE COLOR FROM EACH DEFINED/SELECTED CATEGORY, TO SET THE COLOR OF LEFT DIV-MARK OF TRANSACTION ITEMS
     categories.find(cat =>
       cat.value === transaction.category_type ? (transaction.color = cat.color) : null
     );
@@ -48,7 +49,7 @@ export default function AddTransaction(props) {
 
   return (
     <form className="form" onSubmit={onSubmitHandler}>
-      <div className="wallet">
+      <div className="wallet-type">
         <label>Wallet</label>
         <select
           id="wallet_type"
@@ -57,6 +58,9 @@ export default function AddTransaction(props) {
           onChange={inputHandler}
           required
         >
+          <option disabled value="">
+            -
+          </option>
           {wallets.map((wallet, index) => {
             return (
               <option key={index} value={wallet.value}>
@@ -77,6 +81,9 @@ export default function AddTransaction(props) {
           onChange={inputHandler}
           required
         >
+          <option disabled value="">
+            -
+          </option>
           {categories.map((category, index) => {
             return (
               <option key={index} value={category.value}>

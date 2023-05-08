@@ -22,7 +22,6 @@ export default function TransactionItem(props) {
     };
     amount = (
       <p style={{ margin: '0px' }}>
-        {' '}
         <b>+ {props.amount} </b> RON
       </p>
     );
@@ -56,6 +55,7 @@ export default function TransactionItem(props) {
   };
 
   const category = props.category_type.charAt(0).toUpperCase() + props.category_type.slice(1);
+
   return (
     <>
       <div className="transaction_head">

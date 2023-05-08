@@ -1,0 +1,15 @@
+.dropdown-container {
+  text-align: left;
+  border: 1px solid #ccc;
+  position: relative;
+  border-radius: 5px;
+  padding: 15px;
+    width: auto;
+}
+option{  padding: 15px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}

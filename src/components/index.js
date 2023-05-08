@@ -10,9 +10,9 @@ import { Categories } from './Category/CategoriesContainer';
 import { AddWallet } from './Wallet/AddWallet';
 import Wallet from './Wallet/WalletsContainer/WalletItem/Wallet';
 import TransactionItem from './Transaction/TransactionsContainer/TransactionItem/TransactionItem';
-import { WalletContext } from '../hooks/wallet-context';
 import AddCategoryForm from './Category/CategoriesContainer/CategoryItem/AddCategoryForm';
 import BudgetCategory from './Category/CategoriesContainer/CategoryItem/BudgetCategory';
+import { Dropdown } from './common/Dropdown';
 export {
   Button,
   Dashboard,
@@ -28,5 +28,5 @@ export {
   BudgetCategory,
   AddCategoryForm,
   TransactionItem,
-  WalletContext,
+  Dropdown,
 };
