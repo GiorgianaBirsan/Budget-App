@@ -7,6 +7,10 @@ let style_amount = {};
 let amount = '';
 let amountTypeIcon = {};
 let style_icon = {};
+let category = '';
+let title = '';
+let wallet = '';
+let pay_method = '';
 
 export default function TransactionItem(props) {
   if (props.amount_type === 'income') {
@@ -20,11 +24,7 @@ export default function TransactionItem(props) {
       color: rgb(68, 176, 35),
       margin: '0px',
     };
-    amount = (
-      <p style={{ margin: '0px' }}>
-        <b>+ {props.amount} </b> RON
-      </p>
-    );
+    amount = <b>{`+ ${props.amount} RON`}</b>;
     amountTypeIcon = <HiOutlineArrowDownTray style={style_icon} />;
   } else {
     style_icon = {
@@ -37,11 +37,7 @@ export default function TransactionItem(props) {
       color: rgb(235, 12, 12),
       margin: '0px',
     };
-    amount = (
-      <p style={{ margin: '0px' }}>
-        <b> - {props.amount} </b> RON
-      </p>
-    );
+    amount = <b>{`- ${props.amount} RON`}</b>;
     amountTypeIcon = <HiOutlineArrowUpTray style={style_icon} />;
   }
 
@@ -54,7 +50,12 @@ export default function TransactionItem(props) {
     marginRight: '30px',
   };
 
-  const category = props.category_type.charAt(0).toUpperCase() + props.category_type.slice(1);
+  if (props.category_type !== undefined) {
+    title = props.title.charAt(0).toUpperCase() + props.title.slice(1);
+    wallet = props.wallet.charAt(0).toUpperCase() + props.wallet.slice(1);
+    pay_method = props.pay_method.charAt(0).toUpperCase() + props.pay_method.slice(1);
+    category = props.category_type.charAt(0).toUpperCase() + props.category_type.slice(1);
+  }
 
   return (
     <>
@@ -63,14 +64,20 @@ export default function TransactionItem(props) {
 
         <div>{amountTypeIcon}</div>
         <div className="transaction_title">
-          <h2>{props.title}</h2>
-          <p id="transaction_date"> {category}</p>
+          <h2>{title}</h2>
+          <p id="transaction_category"> {category}</p>
         </div>
       </div>
 
-      <div className="transaction_amount">
-        <p style={style_amount}>{amount}</p>
-        <p id="transaction_date"> {props.date}</p>
+      <div className="transaction_details">
+        <div>
+          <p id="transaction_pay_method">{pay_method}</p>
+          <p id="transaction_wallet">{wallet}</p>
+        </div>
+        <div className="transaction_amount">
+          <p style={style_amount}>{amount}</p>
+          <p id="transaction_date"> {props.date}</p>
+        </div>
       </div>
     </>
   );

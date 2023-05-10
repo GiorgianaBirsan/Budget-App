@@ -1,35 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card } from '../../common/Card';
 import './Transactions.css';
 import TransactionItem from './TransactionItem/TransactionItem';
-import { Dropdown } from '../../common/Dropdown';
-
-//  const categories = JSON.parse(localStorage.getItem('listCategories'));
 
 export default function Transactions(props) {
   const { transactionList } = props;
+  const { filteredTransactionList } = props;
+  let transactions = transactionList;
 
- const categories = JSON.parse(localStorage.getItem('listCategories'));
+/* Filtering the list of existing transactions */
+     if (filteredTransactionList.length > 0){
+    transactions = filteredTransactionList;
+  } 
 
-  const categoryFilterOptions = categories.map(({ title, value }) => ({
-    label: title,
-    value: value,
-  }));
 
   return (
     <React.Fragment>
       <hr />
-      <div>
-        <p>Filter by </p>
-        <Dropdown options={categoryFilterOptions} />
-      </div>
-
       <h3>Transactions history</h3>
-
       <div className="expenses_history">
-        {transactionList.map((transaction, index) => {
+        {transactions.map((transaction, index) => {
           return (
-            <Card className="item_card" key={index}>
+            <Card key={index}>
               <TransactionItem
                 key={index}
                 category_type={transaction.category_type}
@@ -38,6 +30,8 @@ export default function Transactions(props) {
                 amount={transaction.amount}
                 amount_type={transaction.amount_type}
                 color={transaction.color}
+                pay_method={transaction.pay_method}
+                wallet={transaction.wallet}
               />
             </Card>
           );

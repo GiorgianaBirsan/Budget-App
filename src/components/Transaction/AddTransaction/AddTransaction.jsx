@@ -1,40 +1,28 @@
 import React, { useState } from 'react';
 import './AddTransaction.css';
 
-const amountType = [
-  { label: '-', value: '' },
-  { label: 'Income', value: 'income' },
-  { label: 'Expense', value: 'expense' },
-];
-
-const initial_values = {
-  title: '',
-  date: '',
-  amount: '',
-  category_type: '',
-  amount_type: '',
-  color: '',
-  wallet: '',
-};
+/*Importing default values and oprions for form inputs */
+import { amountType, new_transaction_initial_values, payMethod } from '../../../utils/exports';
 
 export default function AddTransaction(props) {
-  const [transaction, setTransaction] = useState(initial_values);
+  const [transaction, setTransaction] = useState(new_transaction_initial_values);
 
-  //POPULATE THE DROPDOWN LIST WITH EXISTING LOCALHOST LISTS OF ELEMENTS
+  /* Automate populate the dropdown menu with existing loicalSorage lists*/
   const wallets = JSON.parse(localStorage.getItem('listWallets'));
   const categories = JSON.parse(localStorage.getItem('listCategories'));
 
   const inputHandler = event => {
     const { name, value } = event.target;
 
-    //SELECT THE COLOR FROM EACH DEFINED/SELECTED CATEGORY, TO SET THE COLOR OF LEFT DIV-MARK OF TRANSACTION ITEMS
+    /*Select the color from each defined/selected category to set the color
+     of the left mark of each transaction block item*/
     categories.find(cat =>
       cat.value === transaction.category_type ? (transaction.color = cat.color) : null
     );
     setTransaction({ ...transaction, [name]: value });
   };
 
-  //FORMATING DATE STRING DD.MM.YYYY
+  /* Formating date function as string like this "DD.MM.YYYY" */
   function formatDate(date) {
     const formatedDate = date.split('-').reverse().join('.');
     transaction.date = formatedDate;
@@ -102,6 +90,7 @@ export default function AddTransaction(props) {
           value={transaction.title}
           onChange={inputHandler}
           required
+          maxLength={100}
         />
       </div>
       <div className="date">
@@ -129,6 +118,25 @@ export default function AddTransaction(props) {
 
       <div className="amount-type">
         <label>Amount type</label>
+
+        <select
+          name="pay_method"
+          id="pay_method"
+          value={transaction.pay_method}
+          onChange={inputHandler}
+          required
+        >
+          <option disabled value="">
+            -
+          </option>
+          {payMethod.map((type, index) => {
+            return (
+              <option key={index} value={type.value}>
+                {type.label}
+              </option>
+            );
+          })}
+        </select>
         <select
           name="amount_type"
           id="amount_type"
@@ -136,6 +144,9 @@ export default function AddTransaction(props) {
           onChange={inputHandler}
           required
         >
+          <option disabled value="">
+            -
+          </option>
           {amountType.map((type, index) => {
             return (
               <option key={index} value={type.value}>

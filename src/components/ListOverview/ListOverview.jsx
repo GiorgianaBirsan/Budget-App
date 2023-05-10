@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Card } from '../common/Card';
 import './ListOverview.css';
 import { TfiBarChart, TfiBarChartAlt } from 'react-icons/tfi';
-import Wallet from '../Wallet/WalletsContainer/WalletItem/Wallet';
+
 
 export default function ListOverview(props) {
   const style_barChartInflow = {
@@ -28,7 +28,7 @@ export default function ListOverview(props) {
     icon: <TfiBarChartAlt style={style_barChartOutflow} />,
   };
 
-  const wallet = JSON.parse(localStorage.getItem('listWallets'));
+  //const wallet = JSON.parse(localStorage.getItem('listWallets'));
 
   return (
     <>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { SlWallet } from 'react-icons/sl';
 import './Wallet.css';
-import { WalletContext } from '../../../../hooks/wallet-context';
+// import { WalletContext } from '../../../../hooks/wallet-context';
 
 export default function Wallet(props) {
   const icon_color = {
     backgroundColor: props.color,
   };
   return (
-    <WalletContext.Provider value={{}}>
+    // <WalletContext.Provider value={{}}>
       <div className="wallet">
         <div className="box_img" style={icon_color}>
           <SlWallet className="react-icons" />
@@ -23,6 +23,6 @@ export default function Wallet(props) {
           )}
         </div>
       </div>
-    </WalletContext.Provider>
+    // </WalletContext.Provider>
   );
 }
