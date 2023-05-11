@@ -16,7 +16,7 @@ export default function Transactions(props) {
 
   return (
     <React.Fragment>
-      <hr />
+     
       <h3>Transactions history</h3>
       <div className="expenses_history">
         {transactions.map((transaction, index) => {

@@ -52,7 +52,12 @@ export default function Wallets() {
         ) : (
           listWallets.map((wallet, index) => {
             return (
-              <Wallet key={index} name={wallet.name} amount={wallet.amount} color={wallet.color} />
+              <Wallet
+                key={index}
+                name={wallet.name}
+                amount={wallet.amount}
+                color={wallet.color}
+              />
             );
           })
         )}

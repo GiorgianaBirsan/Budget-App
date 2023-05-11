@@ -6,10 +6,10 @@ import './Navigation.css';
 export default function Navigation() {
   return (
     <div className="navigation_side">
-      <h1 className="logo_text">Budget</h1>
+      {/* <h1 className="logo_text">Budget</h1>
       <Wallets />
       <hr />
-      <Categories />
+      <Categories /> */}
     </div>
   );
 }

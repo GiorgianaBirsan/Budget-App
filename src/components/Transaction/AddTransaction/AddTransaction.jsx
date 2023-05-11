@@ -137,6 +137,7 @@ export default function AddTransaction(props) {
             );
           })}
         </select>
+        <br />
         <select
           name="amount_type"
           id="amount_type"

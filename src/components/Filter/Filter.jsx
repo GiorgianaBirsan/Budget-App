@@ -3,13 +3,16 @@ import './Filter.css';
 
 /*Extract the name and the value of each category from listCategories for filter's options, and
 adding a first default "No filter" option */
-const categories = JSON.parse(localStorage.getItem('listCategories'));
+let categoryFilterOptions = [];
 
-const categoryFilterOptions = categories.map(({ title, value }) => ({
-  label: title,
-  value: value,
-}));
-categoryFilterOptions.unshift({ label: '--', value: 'none' });
+const categories = JSON.parse(localStorage.getItem('listCategories'));
+if (categories!= null) {
+  categoryFilterOptions = categories.map(({ title, value }) => ({
+    label: title,
+    value: value,
+  }));
+  categoryFilterOptions.unshift({ label: '--', value: 'none' });
+}
 
 export default function Filter(props) {
   function handleChange(e) {

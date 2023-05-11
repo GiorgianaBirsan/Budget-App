@@ -7,27 +7,43 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+
 }
-.total_flow {
-  width: 20vw;
+.total_inflow, .total_outflow,.current_amount {
+  width: 15vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  padding: 10px 20px;
+  border-radius: 30px;
+
 }
+/* .total_inflow{
+background:radial-gradient(rgb(233, 252, 233), white)
+}
+.total_outflow{
+background:radial-gradient(rgb(252, 234, 233), white)
+} */
+/* #current_amount_card {
+ background: #000;
+} */
+.total_amount { font-weight:bold; margin: 0px;}
+
 .flow {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 .flow_title,
-.flow_amount {
+.flow_amount{
   margin: 0px;
 }
 .flow_amount {
-  font-weight: bold;
+  font-weight:500;
+  color: rgb(63, 61, 61);
 }
 .flow_title {
   color: rgb(90, 88, 88);

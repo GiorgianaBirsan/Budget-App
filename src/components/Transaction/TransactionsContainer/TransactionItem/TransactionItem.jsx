@@ -46,7 +46,6 @@ export default function TransactionItem(props) {
     height: '70px',
     backgroundColor: props.color,
     borderRadius: '100px 0px 0px 100px',
-    marginLeft: '-40px',
     marginRight: '30px',
   };
 

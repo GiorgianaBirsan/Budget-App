@@ -57,6 +57,8 @@ If there is no transaction wiith the selected category then a pop up will show u
           : setOutflow((outflowAmount += Number(element.amount)));
       });
       setTransactionList(transactions);
+
+     
     }
   }, []);
 
@@ -90,7 +92,7 @@ If there is no transaction wiith the selected category then a pop up will show u
       <div className="list_overview">
         <ListOverview inflow={inflow} outflow={outflow} />
       </div>
-      
+      <hr />
       <Filter
         selected={filteredTransactionList.category_type}
         onChangeFilter={handleChange}

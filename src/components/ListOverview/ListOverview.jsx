@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card } from '../common/Card';
 import './ListOverview.css';
 import { TfiBarChart, TfiBarChartAlt } from 'react-icons/tfi';
+import { GiWallet } from 'react-icons/gi';
+import WalletContext from '../../utils/wallet-context';
 
 
 export default function ListOverview(props) {
@@ -16,6 +18,11 @@ export default function ListOverview(props) {
     marginRight: '20px',
   };
 
+  // const style_GiWallet = {
+  //   color: {ctx.color},
+  //   fontSize: '30px',
+  //   marginRight: '20px',
+  // };
   const inflows = {
     title: 'Total incomes',
     amount: props.inflow,
@@ -28,15 +35,35 @@ export default function ListOverview(props) {
     icon: <TfiBarChartAlt style={style_barChartOutflow} />,
   };
 
-  //const wallet = JSON.parse(localStorage.getItem('listWallets'));
+const ctx= useContext(WalletContext);
 
   return (
     <>
-      <div className="overview_wallet">{/* {wallet[0].name} */}</div>
-
       <div className="overview_details">
+        <WalletContext.Consumer>
+          {ctx => {
+            return (
+              <div>
+                {ctx.isPressed && (
+                  <Card>
+                    <div className="current_amount">
+                      <GiWallet
+                        style={{ color: ctx.color, fontSize: '30px', marginRight: '20px' }}
+                      />
+                      <div className="flow">
+                        <p className="flow_title">{ctx.name}</p>
+                        <p className="total_amount">{ctx.amount} RON</p>
+                      </div>
+                    </div>
+                  </Card>
+                )}
+              </div>
+            )
+          }}
+        </WalletContext.Consumer> 
+
         <Card>
-          <div className="total_flow">
+          <div className="total_inflow">
             {inflows.icon}
             <div className="flow">
               <p className="flow_title">{inflows.title}</p>
@@ -46,7 +73,7 @@ export default function ListOverview(props) {
         </Card>
 
         <Card>
-          <div className="total_flow">
+          <div className="total_outflow">
             {outflows.icon}
             <div className="flow">
               <p className="flow_title">{outflows.title}</p>
