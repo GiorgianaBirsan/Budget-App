@@ -18,11 +18,6 @@ export default function ListOverview(props) {
     marginRight: '20px',
   };
 
-  // const style_GiWallet = {
-  //   color: {ctx.color},
-  //   fontSize: '30px',
-  //   marginRight: '20px',
-  // };
   const inflows = {
     title: 'Total incomes',
     amount: props.inflow,

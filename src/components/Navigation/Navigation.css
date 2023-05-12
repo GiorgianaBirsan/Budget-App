@@ -2,14 +2,26 @@
   font-size: 18px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+/* .navigation{
+   background-color: rgb(32,27,53,);
+  width: 30vw;
+  height: 10vh;
+ 
+  
+} */
 .navigation_side {
-  background-color: rgb(255, 255, 255);
-  width: 20vw;
-  height: 100vh;
+  background-color: rgba(250, 250, 250, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  width: 15vw;
+  height: auto;
   display: flex;
   flex-direction: column;
   padding-left: 40px;
+  padding-right: 40px;
+   z-index: 1;
 }
+
 .logo_text {
   padding-top: 30px;
   font-size: 40px;

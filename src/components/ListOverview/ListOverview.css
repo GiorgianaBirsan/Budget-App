@@ -8,6 +8,8 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+  z-index:1;
+  position: relative;
 
 }
 .total_inflow, .total_outflow,.current_amount {
@@ -43,9 +45,10 @@ background:radial-gradient(rgb(252, 234, 233), white)
 }
 .flow_amount {
   font-weight:500;
-  color: rgb(63, 61, 61);
+  color: rgb(252, 252, 252);
 }
 .flow_title {
-  color: rgb(90, 88, 88);
+  color: rgb(197, 197, 201);
+  font-weight: 100;
   font-size: 16px;
 }

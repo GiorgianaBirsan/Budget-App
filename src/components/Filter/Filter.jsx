@@ -21,7 +21,7 @@ export default function Filter(props) {
   return (
     <React.Fragment>
       <div className="filter-menu">
-        <label>Filter by</label>
+        <label style={{color:"white"}}>Filter by</label>
         <select
           id="dropdown-container"
           name="dropdown-container"

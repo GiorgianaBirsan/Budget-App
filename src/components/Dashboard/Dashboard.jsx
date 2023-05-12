@@ -75,8 +75,9 @@ If there is no transaction wiith the selected category then a pop up will show u
 
   return (
     <div className="dashboard_side">
+  
       <div className="dashboard_header">
-        <div>
+        <div style={{justifyContent:"flex-start"}}>
           <h1>Hi there!</h1>
           <p>How much did you spend today?</p>
         </div>

@@ -15,7 +15,8 @@ let pay_method = '';
 export default function TransactionItem(props) {
   if (props.amount_type === 'income') {
     style_icon = {
-      backgroundColor: rgba(68, 176, 35, 0.1),
+      // backgroundColor: rgba(68, 176, 35, 0.1),
+      fontSize: 'larger',
       color: rgb(68, 176, 35),
       padding: '10px',
       borderRadius: '10px',
@@ -28,13 +29,16 @@ export default function TransactionItem(props) {
     amountTypeIcon = <HiOutlineArrowDownTray style={style_icon} />;
   } else {
     style_icon = {
-      backgroundColor: rgba(235, 12, 12, 0.1),
-      color: rgb(235, 12, 12),
+     // backgroundColor: rgba(235, 12, 12, 1),
+     fontSize: 'larger',
+      // color: rgb(255, 0, 0),
+      color: "red",
       padding: '10px',
       borderRadius: '10px',
+      weight:'500',
     };
     style_amount = {
-      color: rgb(235, 12, 12),
+      color: rgb(255, 0, 55),
       margin: '0px',
     };
     amount = <b>{`- ${props.amount} RON`}</b>;
@@ -63,7 +67,7 @@ export default function TransactionItem(props) {
 
         <div>{amountTypeIcon}</div>
         <div className="transaction_title">
-          <h2>{title}</h2>
+          <h1>{title}</h1>
           <p id="transaction_category"> {category}</p>
         </div>
       </div>

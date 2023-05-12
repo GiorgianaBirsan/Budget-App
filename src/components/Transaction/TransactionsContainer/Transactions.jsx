@@ -21,7 +21,7 @@ export default function Transactions(props) {
       <div className="expenses_history">
         {transactions.map((transaction, index) => {
           return (
-            <Card key={index}>
+            <Card key={index} className="transaction_card">
               <TransactionItem
                 key={index}
                 category_type={transaction.category_type}
