@@ -1,6 +1,6 @@
 import React from 'react';
-import { Wallets } from '../Wallet/WalletsContainer';
-import { Categories } from '../Category/CategoriesContainer';
+// import { Wallets } from '../Wallet/WalletsContainer';
+// import { Categories } from '../Category/CategoriesContainer';
 import './Navigation.css';
 
 export default function Navigation() {

@@ -13,6 +13,8 @@ import TransactionItem from './Transaction/TransactionsContainer/TransactionItem
 import AddCategoryForm from './Category/CategoriesContainer/CategoryItem/AddCategoryForm';
 import BudgetCategory from './Category/CategoriesContainer/CategoryItem/BudgetCategory';
 import { Dropdown } from './common/Dropdown';
+import { Toast } from './common/Toast';
+
 export {
   Button,
   Dashboard,
@@ -29,4 +31,5 @@ export {
   AddCategoryForm,
   TransactionItem,
   Dropdown,
+  Toast,
 };

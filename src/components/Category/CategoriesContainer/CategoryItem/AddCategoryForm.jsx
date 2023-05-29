@@ -4,7 +4,7 @@ import './BudgetCategory.css';
 const categories = {
   title: '',
   amount: 0,
-  color: '#000',
+  color: "aliceblue",
   value: '',
 };
 

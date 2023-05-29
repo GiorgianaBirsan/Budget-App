@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AddTransaction.css';
 
 /*Importing default values and oprions for form inputs */
-import { amountType, new_transaction_initial_values, payMethod } from '../../../utils/exports';
+import { amountType, new_transaction_initial_values, payMethod } from '../../utils/exports';
 
 export default function AddTransaction(props) {
   const [transaction, setTransaction] = useState(new_transaction_initial_values);

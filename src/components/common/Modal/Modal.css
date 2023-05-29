@@ -32,6 +32,7 @@
   width: 30px;
   align-self: self-end;
 }
-h1 {
+.modal_title {
   text-align: center;
+  color: black;
 }

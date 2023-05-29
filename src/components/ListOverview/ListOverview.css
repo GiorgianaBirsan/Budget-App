@@ -10,29 +10,25 @@
   flex-wrap: nowrap;
   z-index:1;
   position: relative;
+  gap: 10px;
 
 }
 .total_inflow, .total_outflow,.current_amount {
-  width: 15vw;
+  width: 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 40px;
   border-radius: 30px;
 
 }
-/* .total_inflow{
-background:radial-gradient(rgb(233, 252, 233), white)
-}
-.total_outflow{
-background:radial-gradient(rgb(252, 234, 233), white)
-} */
-/* #current_amount_card {
- background: #000;
-} */
-.total_amount { font-weight:bold; margin: 0px;}
+
+.total_amount { 
+  font-weight:bold; 
+  margin: 0px;
+  }
 
 .flow {
   display: flex;

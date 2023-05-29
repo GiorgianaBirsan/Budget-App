@@ -1,7 +1,7 @@
 import React from 'react';
 import './TransactionItem.css';
 import { HiOutlineArrowDownTray, HiOutlineArrowUpTray } from 'react-icons/hi2';
-import { rgb, rgba } from 'polished';
+import { rgb} from 'polished';
 
 let style_amount = {};
 let amount = '';
@@ -68,14 +68,15 @@ export default function TransactionItem(props) {
         <div>{amountTypeIcon}</div>
         <div className="transaction_title">
           <h1>{title}</h1>
-          <p id="transaction_category"> {category}</p>
+      
+           <p id="transaction_wallet">{wallet}</p>
         </div>
       </div>
 
       <div className="transaction_details">
         <div>
           <p id="transaction_pay_method">{pay_method}</p>
-          <p id="transaction_wallet">{wallet}</p>
+            <p id="transaction_category"> {category}</p>
         </div>
         <div className="transaction_amount">
           <p style={style_amount}>{amount}</p>

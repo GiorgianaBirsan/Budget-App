@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { AddTransaction, Transactions } from '..';
+import React, { useState, useEffect, useContext } from 'react';
+import { AddTransaction, Toast, Transactions } from '..';
 import { Modal } from '../common/Modal';
 import ListOverview from '../ListOverview/ListOverview';
 import './Dashboard.css';
 import Filter from '../Filter/Filter';
+import { displayToast } from '../common/Toast/Toast';
+// import WalletContext from '../utils/wallet-context';
 
 let inflowAmount = 0;
 let outflowAmount = 0;
 
 export default function Dashboard() {
+
   const [isOpen, setIsOpen] = useState(false);
   const [transactionList, setTransactionList] = useState([]);
   const [filteredTransactionList, setFilteredTransactionList] = useState([]);
   const [inflow, setInflow] = useState(0);
   const [outflow, setOutflow] = useState(0);
+
+  // const ctxx = useContext(WalletContext);
 
   /*Calculate total of incomes or expenses in the same time adding a new transaction*/
   function handlerSetList(transaction) {
@@ -26,24 +31,25 @@ export default function Dashboard() {
   /*Filter transactions list by category type.
 If there is no transaction wiith the selected category then a pop up will show up. */
   let filteredTransaction = [];
+  // let filteredTransactionbyWallet = [];
 
   function handleChange(slectedCategory) {
     if (slectedCategory !== 'none') {
       filteredTransaction = transactionList.filter(
         transaction => transaction.category_type === slectedCategory
       );
-
       localStorage.setItem('filterTransactionList', JSON.stringify(filteredTransaction));
       setFilteredTransactionList(filteredTransaction);
 
       if (filteredTransaction.length < 1) {
-        alert('You have no transaction in that category.');
-        return;
+        displayToast(document.getElementById('toast'));
       }
     } else {
       localStorage.setItem('filterTransactionList', JSON.stringify(transactionList));
       setFilteredTransactionList(transactionList);
     }
+
+    
   }
 
   /* GET transaction items FROM list in local storage*/
@@ -57,8 +63,6 @@ If there is no transaction wiith the selected category then a pop up will show u
           : setOutflow((outflowAmount += Number(element.amount)));
       });
       setTransactionList(transactions);
-
-     
     }
   }, []);
 
@@ -75,9 +79,8 @@ If there is no transaction wiith the selected category then a pop up will show u
 
   return (
     <div className="dashboard_side">
-  
       <div className="dashboard_header">
-        <div style={{justifyContent:"flex-start"}}>
+        <div style={{ justifyContent: 'flex-start' }}>
           <h1>Hi there!</h1>
           <p>How much did you spend today?</p>
         </div>
@@ -94,9 +97,14 @@ If there is no transaction wiith the selected category then a pop up will show u
         <ListOverview inflow={inflow} outflow={outflow} />
       </div>
       <hr />
+
+      <Toast children={'No transactions within this category'} />
+
       <Filter
-        selected={filteredTransactionList.category_type}
-        onChangeFilter={handleChange}
+        selectedCategory={filteredTransactionList.category_type}
+        // selectedWallet={filteredTransactionList.wallet}
+        onChangeCategoryFilter={handleChange}
+        // onChangeWalletFilter={handleChangeWallet}
       ></Filter>
 
       {filteredTransactionList && (

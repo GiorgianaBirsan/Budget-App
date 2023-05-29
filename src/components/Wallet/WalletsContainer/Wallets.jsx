@@ -5,7 +5,7 @@ import { Modal } from '../../common/Modal';
 import AddWallet from '../AddWallet/AddWallet';
 import Wallet from './WalletItem/Wallet';
 
-export default function Wallets() {
+export default function Wallets(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [listWallets, setListWallets] = useState([]);
 
@@ -23,7 +23,6 @@ export default function Wallets() {
     if (listWallets) {
       localStorage.setItem('listWallets', JSON.stringify(listWallets));
     }
-    // listWallets.forEach((element) => {});
   }, [listWallets]);
 
   return (
@@ -45,22 +44,28 @@ export default function Wallets() {
 
       {/* LISTING WALLETS FROM LIST */}
       <div className="wallets_collection">
-        {listWallets.length === 0 ? (
-          <p>
+        {listWallets.length < 1 ? (
+          <p style={{ color: 'white' }}>
             <i>Nothing here yet!</i>
           </p>
         ) : (
           listWallets.map((wallet, index) => {
+            if (wallet.amount === '') {
+              wallet.amount = '0';
+            }
             return (
               <Wallet
                 key={index}
                 name={wallet.name}
                 amount={wallet.amount}
                 color={wallet.color}
+                handleClick={props.updateContextData}
               />
             );
           })
         )}
+
+        <button>See all</button>
       </div>
     </>
   );
