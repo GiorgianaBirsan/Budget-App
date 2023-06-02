@@ -11,7 +11,7 @@ export default function Wallet(props) {
       </div>
       <div className="wallet_details">
         <p className="wallet_title">{props.name}</p>
-       <p className="wallet_amount">{props.amount} RON</p>
+       {/* <p className="wallet_amount">{props.amount} RON</p> */}
       </div>
     </div>
   );

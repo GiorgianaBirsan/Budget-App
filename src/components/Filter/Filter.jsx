@@ -5,11 +5,9 @@ import './Filter.css';
 adding a first default "No filter" option */
 let categoryFilterOptions = [];
 
-
 const categories = JSON.parse(localStorage.getItem('listCategories'));
 
-
-if (categories!= null) {
+if (categories != null) {
   categoryFilterOptions = categories.map(({ title, value }) => ({
     label: title,
     value: value,
@@ -19,13 +17,13 @@ if (categories!= null) {
 
 export default function Filter(props) {
   function handleChange(e) {
-       props.onChangeCategoryFilter(e.target.value);
+    props.onChangeCategoryFilter(e.target.value);
   }
 
-   return (
+  return (
     <React.Fragment>
       <div className="filter-menu">
-        <label style={{color:"white"}}>Filter by</label>
+        <label style={{ color: 'white' }}>Filter by</label>
         <select
           id="dropdown-container"
           name="dropdown-container"
@@ -38,8 +36,6 @@ export default function Filter(props) {
             </option>
           ))}
         </select>
-
-       
       </div>
     </React.Fragment>
   );

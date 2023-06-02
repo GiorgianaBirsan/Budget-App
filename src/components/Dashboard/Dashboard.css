@@ -18,7 +18,7 @@
 .dashboard_side {
   /* background-color: rgb(255, 254, 254); */
    background-color: rgb(7, 1, 30);
-  width: 50vw;
+  width: 64vw;
   /* height: 100%; */
   /* margin-left: 40px; */
   padding: 70px;
@@ -32,8 +32,8 @@
     /* top: 0; */
     /* left: 0; */
     /* bottom: 0; */
-    width: 70vw;
-    height: 90%;
+    width: 80vw;
+    height: 100%;
     margin: 0;
     padding: 0;
     background: linear-gradient(rgb(11, 2, 44), rgb(45, 35, 82));

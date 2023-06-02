@@ -65,7 +65,9 @@ export default function Wallets(props) {
           })
         )}
 
-        <button>See all</button>
+        <button id="see_all_wallets_btn" onClick={() => props.updateContextData('-', 0, '#fff')}>
+          See all transactions
+        </button>
       </div>
     </>
   );

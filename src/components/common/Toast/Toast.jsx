@@ -9,5 +9,5 @@ export function displayToast(element) {
    element.className = 'show';
   setTimeout(function () {
     element.className = element.className.replace('show', '');
-  }, 3000);
+  }, 5000);
 }
