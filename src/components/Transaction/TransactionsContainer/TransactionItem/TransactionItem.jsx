@@ -2,7 +2,7 @@ import React from 'react';
 import './TransactionItem.css';
 import { HiOutlineArrowDownTray, HiOutlineArrowUpTray } from 'react-icons/hi2';
 import { rgb } from 'polished';
-
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 
 let style_amount = {};
 let amount = '';
@@ -13,12 +13,9 @@ let title = '';
 let wallet = '';
 let pay_method = '';
 
-
 export default function TransactionItem(props) {
-
   if (props.amount_type === 'income') {
     style_icon = {
-      // backgroundColor: rgba(68, 176, 35, 0.1),
       fontSize: 'larger',
       color: rgb(68, 176, 35),
       padding: '10px',
@@ -30,12 +27,9 @@ export default function TransactionItem(props) {
     };
     amount = <b>{`+ ${props.amount} RON`}</b>;
     amountTypeIcon = <HiOutlineArrowDownTray style={style_icon} />;
-
-     } else {
+  } else {
     style_icon = {
-      // backgroundColor: rgba(235, 12, 12, 1),
       fontSize: 'larger',
-      // color: rgb(255, 0, 0),
       color: 'red',
       padding: '10px',
       borderRadius: '10px',
@@ -47,8 +41,6 @@ export default function TransactionItem(props) {
     };
     amount = <b>{`- ${props.amount} RON`}</b>;
     amountTypeIcon = <HiOutlineArrowUpTray style={style_icon} />;
-
-   
   }
 
   const category_mark = {
@@ -66,7 +58,6 @@ export default function TransactionItem(props) {
     category = props.category_type.charAt(0).toUpperCase() + props.category_type.slice(1);
   }
 
-
   return (
     <>
       <div className="transaction_head">
@@ -74,7 +65,7 @@ export default function TransactionItem(props) {
 
         <div>{amountTypeIcon}</div>
         <div className="transaction_title">
-          <h1>{title}</h1>
+          <p id="title">{title}</p>
 
           <p id="transaction_wallet">{wallet}</p>
         </div>
@@ -89,6 +80,15 @@ export default function TransactionItem(props) {
           <p style={style_amount}>{amount}</p>
           <p id="transaction_date"> {props.date}</p>
         </div>
+      </div>
+
+      <div className="modify_transaction">
+        <button className="edit_btn">
+          <AiOutlineEdit />
+        </button>
+        <button className="delete_btn" onClick={() => props.deleteTransaction(props.title)}>
+          <AiOutlineDelete />
+        </button>
       </div>
     </>
   );

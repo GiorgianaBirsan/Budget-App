@@ -6,7 +6,6 @@ import './Dashboard.css';
 import Filter from '../Filter/Filter';
 import { displayToast } from '../common/Toast/Toast';
 
-
 let inflowAmount = 0;
 let outflowAmount = 0;
 
@@ -16,7 +15,6 @@ export default function Dashboard() {
   const [filteredTransactionList, setFilteredTransactionList] = useState([]);
   const [inflow, setInflow] = useState(0);
   const [outflow, setOutflow] = useState(0);
-
 
   /*Calculate total of incomes or expenses in the same time adding a new transaction*/
   function handlerSetList(transaction) {
@@ -46,6 +44,27 @@ If there is no transaction wiith the selected category then a pop up will show u
       setFilteredTransactionList(transactionList);
     }
   }
+
+  /* DELETE transaction items FROM transactions list in local storage*/
+  function deleteTransaction(slectedTransaction) {
+    const deleteTransactionItem = transactionList.filter(
+      transaction => transaction.title !== slectedTransaction
+    );
+    localStorage.setItem('transactionList', JSON.stringify(deleteTransactionItem));
+    setTransactionList(deleteTransactionItem);
+  }
+
+  // /* EDIT transaction items FROM transactions list in local storage*/
+  // function editTransaction(slectedTransaction) {
+  //   const editTransactionItem = transactionList.filter(
+  //     transaction => transaction.title === slectedTransaction
+  //   );
+  //  setIsOpen(true);
+  
+  //   console.log("🚀 ~ file: Dashboard.jsx:62 ~ editTransaction ~ editTransactionItem:", editTransactionItem)
+  //   // setTransactionList(...transactionList, editTransactionItem);
+  //   // localStorage.setItem('transactionList', JSON.stringify(transactionList));
+  // }
 
   /* GET transaction items FROM list in local storage*/
   useEffect(() => {
@@ -89,7 +108,7 @@ If there is no transaction wiith the selected category then a pop up will show u
         ></button>
       </div>
       <div className="list_overview">
-        <ListOverview inflow={inflow} outflow={outflow} wallet={transactionList}/>
+        <ListOverview inflow={inflow} outflow={outflow} wallet={transactionList} />
       </div>
       <hr />
 
@@ -105,6 +124,8 @@ If there is no transaction wiith the selected category then a pop up will show u
           <Transactions
             transactionList={transactionList}
             filteredTransactionList={filteredTransactionList}
+            deleteTransaction={deleteTransaction}
+            // editTransaction={editTransaction}
           />
         </div>
       )}

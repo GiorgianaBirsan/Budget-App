@@ -9,8 +9,8 @@ export default function BudgetCategory(props) {
     height: '5px',
   };
 
-  let amount = '';
-  Number(props.amount) > 0 ? (amount = props.amount) : (amount = '0');
+  // let amount = '';
+  // Number(props.amount) > 0 ? (amount = props.amount) : (amount = '0');
 
   return (
     <>
