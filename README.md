@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+<h1>Budget App</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>This project represents a SPA money flow tracker created with ReactJS.
+  
+From the beginning, the user has to create a wallet via a modal form, and then have some predefined categories of transaction, but it can also be added a custom category from a similar modal form as the wallet form, from the left side of the page.</p>
 
-## Available Scripts
+![image](https://github.com/GiorgianaBirsan/Practicing-React/assets/64731577/1a7ee4e6-a56b-466a-ba78-b6ece1eb6061)
 
-In the project directory, you can run:
+<p> This is all needed to create a new log transaction in the History. On the right side of the page, the user triggers another modal form where can create the transaction with all details that are helping him to track his money over time.</p>
 
-### `npm start`
+![image](https://github.com/GiorgianaBirsan/Practicing-React/assets/64731577/361f9a50-f03a-4c9f-9b93-e199d2c1e0c7)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p>On the top of the list of transactions, it's calculated the total amount of expenses and the total amount of income from all categories and all wallets existing.</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://github.com/GiorgianaBirsan/Practicing-React/assets/64731577/f93f3159-c9dc-4cde-9113-064cc66a8c6a)
 
-### `npm test`
+<p>For the moment, in the list of transactions, the user can only filter by category and delete transactions.</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://github.com/GiorgianaBirsan/Practicing-React/assets/64731577/04a60a54-d808-4cdf-8b74-8bd0c9b10ba4)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project will be updated soon!
