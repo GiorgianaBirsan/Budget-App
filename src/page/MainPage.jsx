@@ -11,6 +11,7 @@ export default function MainPage() {
     amount: 0,
     color: '#fff',
   });
+  
 
   const updateContextData = (name, amount, color) => {
     setContextData({
@@ -19,10 +20,7 @@ export default function MainPage() {
       color: color,
     });
   };
-  function as() {
-    alert('as');
-    return;
-  }
+ 
 
   return (
     <div className="main_container">
@@ -33,7 +31,7 @@ export default function MainPage() {
         <Categories />
       </div>
 
-      <WalletContext.Provider value={{ ...contextData, updateContextData, as }}>
+      <WalletContext.Provider value={{ ...contextData, updateContextData }}>
         <Dashboard />
       </WalletContext.Provider>
     </div>

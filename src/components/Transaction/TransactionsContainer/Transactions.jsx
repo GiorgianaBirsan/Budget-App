@@ -71,13 +71,12 @@ export default function Transactions(props) {
                 pay_method={transaction.pay_method}
                 wallet={transaction.wallet}
                 deleteTransaction={props.deleteTransaction}
-                // editTransaction={props.editTransaction}
+               //  editTransaction={props.editTransaction}
               />
             </Card>
           );
         })}
       </div>
     </React.Fragment>
-
   );
 }

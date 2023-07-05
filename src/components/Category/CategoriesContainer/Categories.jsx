@@ -67,7 +67,7 @@ export default function Categories() {
 
       <div className="categories_collection">
         {/* NEW ADDED CATEGORIES, EXTRA OF DEFAULT CATEGORIES  */}
-        {listCategories.map((category, index) => {
+        { listCategories.length>0 && listCategories.map((category, index) => {
           return (
             <BudgetCategory
               key={index}

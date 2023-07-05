@@ -83,9 +83,10 @@ export default function TransactionItem(props) {
       </div>
 
       <div className="modify_transaction">
-        <button className="edit_btn">
+        {/* <button className="edit_btn" onClick={() => props.editTransaction(props.title)}>
+          
           <AiOutlineEdit />
-        </button>
+        </button> */}
         <button className="delete_btn" onClick={() => props.deleteTransaction(props.title)}>
           <AiOutlineDelete />
         </button>

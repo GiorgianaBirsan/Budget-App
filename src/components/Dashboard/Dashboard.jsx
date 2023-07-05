@@ -25,7 +25,7 @@ export default function Dashboard() {
   }
 
   /*Filter transactions list by category type.
-If there is no transaction wiith the selected category then a pop up will show up. */
+If there is no transaction with the selected category then a pop up will show up. */
   let filteredTransaction = [];
 
   function handleChange(slectedCategory) {
@@ -56,14 +56,12 @@ If there is no transaction wiith the selected category then a pop up will show u
 
   // /* EDIT transaction items FROM transactions list in local storage*/
   // function editTransaction(slectedTransaction) {
-  //   const editTransactionItem = transactionList.filter(
-  //     transaction => transaction.title === slectedTransaction
-  //   );
-  //  setIsOpen(true);
-  
-  //   console.log("🚀 ~ file: Dashboard.jsx:62 ~ editTransaction ~ editTransactionItem:", editTransactionItem)
-  //   // setTransactionList(...transactionList, editTransactionItem);
-  //   // localStorage.setItem('transactionList', JSON.stringify(transactionList));
+  //   console.log("🚀 ~ file: Dashboard.jsx:59 ~ editTransaction ~ slectedTransaction:", slectedTransaction)
+  //   // const editTransactionItem = transactionList.filter(
+  //   //   transaction => transaction.title === slectedTransaction
+  //   // );
+  //   setIsOpen(true);
+  // //  return editTransactionItem
   // }
 
   /* GET transaction items FROM list in local storage*/
@@ -125,13 +123,17 @@ If there is no transaction wiith the selected category then a pop up will show u
             transactionList={transactionList}
             filteredTransactionList={filteredTransactionList}
             deleteTransaction={deleteTransaction}
-            // editTransaction={editTransaction}
+           // editTransaction={editTransaction}
           />
         </div>
       )}
       {/* A new transaction will be add here */}
       <Modal open={isOpen} onClose={() => setIsOpen(!isOpen)} title="Add new transaction">
-        <AddTransaction handlerSetList={handlerSetList} handlerVisibility={setIsOpen} />
+        <AddTransaction 
+        handlerSetList={handlerSetList} 
+        handlerVisibility={setIsOpen}
+        // editTransaction={editTransaction}
+         />
       </Modal>
     </div>
   );
