@@ -2,17 +2,24 @@
   display: flex;
   flex-direction: column;
   margin-left: 20px;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding-right: 50px;
+ 
 }
-.transaction_head {
+.transaction_head,.transaction_details {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 50%;
+ 
 }
+.transaction_details { justify-content: space-between; }
 h2 {
   margin: 0px;
 }
 
-#transaction_date {
+#transaction_date, #transaction_category, #transaction_pay_method, #transaction_wallet {
   margin: 0px;
   font-size: 14px;
   color: gray;
@@ -22,13 +29,5 @@ h2 {
   flex-direction: column;
   margin-left: 20px;
   align-items: flex-end;
-  margin: 0px;
+  margin: 50px;
 }
-/* .category_mark{
-    width: 10px;
-    height: 70px;
-    background-color: aqua
-    border-radius: 10px 0px 0px 10px;
-    margin-left: -40px;
-    margin-right: 30px;
-} */

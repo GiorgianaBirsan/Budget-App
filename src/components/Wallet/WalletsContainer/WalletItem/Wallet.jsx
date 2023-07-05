@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import { SlWallet } from 'react-icons/sl';
 import './Wallet.css';
-import { WalletContext } from '../../../../hooks/wallet-context';
+
 
 export default function Wallet(props) {
+  // const [isPressed, setIsPressed] = useState(false);
+
+  const handleClick = (name, amount,color) => {
+   
+    console.log( name, amount,color);
+    const selectedWallet={
+      name:name,
+      amount:amount,
+      color:color,
+      value:name
+    }
+    localStorage.setItem('selectedWallet', JSON.stringify(selectedWallet))
+  
+  };
+
+
   const icon_color = {
     backgroundColor: props.color,
   };
   return (
-    <WalletContext.Provider value={{}}>
-      <div className="wallet">
+    
+   
+      <div className="wallet"  onClick={() => handleClick(props.name,props.amount,props.color)} >
         <div className="box_img" style={icon_color}>
           <SlWallet className="react-icons" />
         </div>
@@ -23,6 +40,6 @@ export default function Wallet(props) {
           )}
         </div>
       </div>
-    </WalletContext.Provider>
+ 
   );
 }
