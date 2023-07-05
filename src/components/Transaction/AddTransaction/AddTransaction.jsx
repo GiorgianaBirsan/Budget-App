@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './AddTransaction.css';
 
 /*Importing default values and oprions for form inputs */
-import { amountType, new_transaction_initial_values, payMethod } from '../../../utils/exports';
+import { amountType, new_transaction_initial_values, payMethod } from '../../utils/exports';
 
 export default function AddTransaction(props) {
+  
   const [transaction, setTransaction] = useState(new_transaction_initial_values);
 
   /* Automate populate the dropdown menu with existing loicalSorage lists*/
@@ -14,7 +15,7 @@ export default function AddTransaction(props) {
   const inputHandler = event => {
     const { name, value } = event.target;
 
-    /*Select the color from each defined/selected category to set the color
+    /*Insert the color from each defined/selected category to set the color
      of the left mark of each transaction block item*/
     categories.find(cat =>
       cat.value === transaction.category_type ? (transaction.color = cat.color) : null

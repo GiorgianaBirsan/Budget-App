@@ -9,5 +9,13 @@
 
 h1 {
   font-size: larger;
-  color: #413e3e;
+  color: #dfdcdc;
+}
+#see_all_wallets_btn{
+    margin-top: 20px;
+    border: none;
+    background: none;
+    color: antiquewhite;
+    cursor: pointer;
+    text-decoration: underline;
 }

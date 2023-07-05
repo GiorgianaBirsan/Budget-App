@@ -10,22 +10,22 @@ const defaultListCategories = [
   {
     title: 'Utilities',
     amount: '0',
-    color: rgb(47, 129, 236),
+    color: rgb(47, 29, 236),
     value: 'utilities',
   },
   {
     title: 'Shopping',
     amount: '0',
-    color: rgb(192, 153, 220),
+    color: rgb(192, 13, 220),
     value: 'shopping',
   },
   {
     title: 'Personal',
     amount: '0',
-    color: rgb(251, 220, 173),
+    color: rgb(251, 220, 13),
     value: 'personal',
   },
-  { title: 'Saving', amount: '0', color: rgb(126, 200, 157), value: 'saving' },
+  { title: 'Saving', amount: '0', color: rgb(126, 200, 15), value: 'saving' },
 ];
 
 export default function Categories() {
@@ -39,6 +39,7 @@ export default function Categories() {
   //GET / SET WALLET ITEMS FROM/IN LIST FROM LOCAL STORAGE
   useEffect(() => {
     const category = JSON.parse(localStorage.getItem('listCategories'));
+
     setListCategories(category);
   }, []);
 
@@ -66,7 +67,7 @@ export default function Categories() {
 
       <div className="categories_collection">
         {/* NEW ADDED CATEGORIES, EXTRA OF DEFAULT CATEGORIES  */}
-        {listCategories.map((category, index) => {
+        { listCategories.length>0 && listCategories.map((category, index) => {
           return (
             <BudgetCategory
               key={index}

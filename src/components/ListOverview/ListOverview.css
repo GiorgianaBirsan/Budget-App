@@ -8,29 +8,27 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+  z-index:1;
+  position: relative;
+  gap: 10px;
 
 }
 .total_inflow, .total_outflow,.current_amount {
-  width: 15vw;
+  width: 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 40px;
   border-radius: 30px;
 
 }
-/* .total_inflow{
-background:radial-gradient(rgb(233, 252, 233), white)
-}
-.total_outflow{
-background:radial-gradient(rgb(252, 234, 233), white)
-} */
-/* #current_amount_card {
- background: #000;
-} */
-.total_amount { font-weight:bold; margin: 0px;}
+
+.total_amount { 
+  font-weight:bold; 
+  margin: 0px;
+  }
 
 .flow {
   display: flex;
@@ -43,9 +41,10 @@ background:radial-gradient(rgb(252, 234, 233), white)
 }
 .flow_amount {
   font-weight:500;
-  color: rgb(63, 61, 61);
+  color: rgb(252, 252, 252);
 }
 .flow_title {
-  color: rgb(90, 88, 88);
+  color: rgb(197, 197, 201);
+  font-weight: 100;
   font-size: 16px;
 }

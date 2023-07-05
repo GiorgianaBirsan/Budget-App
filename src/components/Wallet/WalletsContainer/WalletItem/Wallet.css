@@ -4,6 +4,7 @@
   flex-wrap: nowrap;
   gap: 10px;
   margin-top: 20px;
+  align-items: center;
 }
 
 .box_img {
@@ -19,13 +20,13 @@
 }
 .wallet_title {
   margin: 0;
-  color: #5c5c5c;
-  font-weight: bold;
+  color: #f3f0f0;
+  font-weight: 500;
 }
 .wallet_amount {
-  color: #888888;
+  color: #dadada;
   font-size: smaller;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
 }
 .react-icons {

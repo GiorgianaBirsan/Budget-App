@@ -8,7 +8,7 @@ export default function Modal({ open, children, onClose, title }) {
     <div className="modal_container">
       <div className="modal_content">
         <button id="close_modal_btn" children="X" onClick={onClose} />
-        <h1>{title}</h1>
+        <h1 className='modal_title'>{title}</h1>
         {children}
       </div>
     </div>,

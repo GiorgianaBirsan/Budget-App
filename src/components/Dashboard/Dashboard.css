@@ -2,13 +2,6 @@
   font-size: 18px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.dashboard_side {
-  background-color: rgb(255, 254, 254);
-  width: 80vw;
-  margin-left: 40px;
-  padding: 70px;
-  border-left: 1px solid #eff0f375;
-}
 .dashboard_header {
   display: flex;
   flex-direction: row;
@@ -16,19 +9,69 @@
   flex-wrap: wrap;
   justify-content: space-between;
   height: 50px;
+ z-index:1;
+  position: relative;
+  color: aliceblue;
+
+}
+
+.dashboard_side {
+  /* background-color: rgb(255, 254, 254); */
+   background-color: rgb(7, 1, 30);
+  width: 64vw;
+  /* height: 100%; */
+  /* margin-left: 40px; */
+  padding: 70px;
+  /* z-index: -1; */
+  /* border-left: 1px solid #eff0f375; */
+ 
+}
+.dashboard_side::before{
+     content: "";
+    position: absolute;
+    /* top: 0; */
+    /* left: 0; */
+    /* bottom: 0; */
+    width: 80vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgb(11, 2, 44), rgb(45, 35, 82));
+    clip-path: circle(40% at 90% 50%);
+
+ }
+ 
+.dashboard_side::after{
+ content:"";
+ position: absolute;
+ opacity: 50%;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 50%;
+ background: linear-gradient(rgb(165, 12, 226), rgb(0, 255, 255));
+ clip-path: circle(15% at 20% 10%);
+ 
 }
 
 #log_transaction {
   background-color: rgb(41, 116, 228);
   color: rgb(233, 233, 233);
   border-radius: 5px;
-  border: solid 1px rgb(231, 231, 231);
+  border: solid 1px rgb(30, 53, 83);
   text-align: center;
   padding: 10px 20px;
+   z-index:1;
 }
 .list_overview {
   margin-top: 100px;
+  color: rgb(255, 254, 254); 
+  
+
 }
 .list_expenses {
   margin-top: 50px;
+  position: relative;
+   color: rgb(255, 254, 254); 
+
 }

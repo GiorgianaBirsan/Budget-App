@@ -15,14 +15,16 @@
  
 }
 .transaction_details { justify-content: space-between; }
-h2 {
+#title {
   margin: 0px;
+  font-size: large;
+  color: rgb(247, 250, 250);
 }
 
 #transaction_date, #transaction_category, #transaction_pay_method, #transaction_wallet {
   margin: 0px;
-  font-size: 14px;
-  color: gray;
+  font-size: 13px;
+  color: rgb(197, 194, 194);
 }
 .transaction_amount {
   display: flex;
@@ -30,4 +32,24 @@ h2 {
   margin-left: 20px;
   align-items: flex-end;
   margin: 50px;
+}
+
+#transaction_category{
+  margin-top:10px ;
+  }
+
+.modify_transaction{
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
+}
+.edit_btn, .delete_btn{
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+.edit_btn:active, .delete_btn :active{
+  transform: translateY(4px);
+  color: rgb(255, 0, 0);
 }

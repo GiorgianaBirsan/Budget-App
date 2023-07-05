@@ -23,9 +23,10 @@ export default function AddWallet(props) {
         wallet.value = wallet.name;
 
         if (wallet.amount.toString().startsWith('0')) {
-          alert('Amount can not starts with 0.');
+          alert('Amount can not starts with 0. If the wallet have o money then insert nothing!');
         } else {
           wallet.name = wallet.name.charAt(0).toUpperCase() + wallet.name.slice(1);
+          wallet.value = wallet.name.charAt(0).toLocaleLowerCase() + wallet.name.slice(1);
           props.addHandler(wallet);
         }
         props.handlerVisibility(false);

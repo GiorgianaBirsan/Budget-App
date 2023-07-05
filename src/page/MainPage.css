@@ -6,5 +6,12 @@
   align-items: stretch;
   margin: auto;
   margin-right: 170px;
+  background:rgb(7,1,30);
+  
   /* gap: 20px; */
+}
+.graphics{
+  height: auto;
+  width: 40vw;background-color: aqua;
+  position: relative;
 }

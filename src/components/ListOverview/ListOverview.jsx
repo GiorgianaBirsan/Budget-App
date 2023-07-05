@@ -3,26 +3,12 @@ import { Card } from '../common/Card';
 import './ListOverview.css';
 import { TfiBarChart, TfiBarChartAlt } from 'react-icons/tfi';
 import { GiWallet } from 'react-icons/gi';
-import WalletContext from '../../utils/wallet-context';
-
+import WalletContext from '../utils/wallet-context';
+import { style_barChartInflow, style_barChartOutflow } from './dinamicStyle';
 
 export default function ListOverview(props) {
-  const style_barChartInflow = {
-    color: 'green',
-    fontSize: '30px',
-    marginRight: '20px',
-  };
-  const style_barChartOutflow = {
-    color: 'red',
-    fontSize: '30px',
-    marginRight: '20px',
-  };
+  const ctx = useContext(WalletContext);
 
-  // const style_GiWallet = {
-  //   color: {ctx.color},
-  //   fontSize: '30px',
-  //   marginRight: '20px',
-  // };
   const inflows = {
     title: 'Total incomes',
     amount: props.inflow,
@@ -35,32 +21,36 @@ export default function ListOverview(props) {
     icon: <TfiBarChartAlt style={style_barChartOutflow} />,
   };
 
-const ctx= useContext(WalletContext);
+  let walletAmount = Number(ctx.amount);
+
+  const walletTransactions = props.wallet.filter(name => name.wallet === ctx.name.toLowerCase());
+
+  walletTransactions.reverse().forEach(element => {
+    if (element.amount_type === 'income') {
+      walletAmount = walletAmount + Number(element.amount);
+    } else {
+      if (walletAmount > Number(element.amount)) {
+        walletAmount = walletAmount - Number(element.amount);
+      } else {
+        walletAmount = 0;
+      }
+    }
+  });
 
   return (
     <>
       <div className="overview_details">
-        <WalletContext.Consumer>
-          {ctx => {
-            return (
-              <div>
-                {ctx.isPressed && (
-                  <Card>
-                    <div className="current_amount">
-                      <GiWallet
-                        style={{ color: ctx.color, fontSize: '30px', marginRight: '20px' }}
-                      />
-                      <div className="flow">
-                        <p className="flow_title">{ctx.name}</p>
-                        <p className="total_amount">{ctx.amount} RON</p>
-                      </div>
-                    </div>
-                  </Card>
-                )}
+        {ctx && (
+          <Card>
+            <div className="current_amount">
+              <GiWallet style={{ color: ctx.color, fontSize: '30px', marginRight: '20px' }} />
+              <div className="flow">
+                <p className="flow_title">{ctx.name}</p>
+                <p className="total_amount">{walletAmount} RON</p>
               </div>
-            )
-          }}
-        </WalletContext.Consumer> 
+            </div>
+          </Card>
+        )}
 
         <Card>
           <div className="total_inflow">
